@@ -1,0 +1,455 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-paper: #fbfafc;
+  --color-card: #ffffff;
+  --color-mist: #f6f1f8;
+  --color-dawn: #f8e6e2;
+  --color-field: #f1ecf4;
+  --color-line: #e7e0ec;
+  --color-plum: #322854;
+  --color-plum-muted: #5e5670;
+  --color-placeholder: #6f6780;
+  --color-violet: #433767;
+  --color-violet-ink: #2e2448;
+  --color-lavender: #866fa2;
+  --color-lavender-deep: #6e5890;
+  --color-peach: #f1c7c3;
+  --color-night: #1e1733;
+  --color-on-night: #cfc6da;
+  --color-error: #b42318;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  --radius-field: 12px;
+  --radius-card: 20px;
+  --radius-media: 24px;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper font-sans text-base leading-[1.6] text-plum-muted antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-plum;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-violet);
+    outline-offset: 2px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  img {
+    background-color: var(--color-mist);
+  }
+
+  ::selection {
+    background: var(--color-peach);
+    color: var(--color-plum);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1280px] px-6 lg:px-10;
+  }
+
+  .h1 {
+    @apply text-[40px] leading-[1.05] font-semibold tracking-[-0.02em] lg:text-[64px];
+  }
+
+  .h2 {
+    @apply text-[32px] leading-[1.1] font-semibold tracking-[-0.015em] lg:text-[44px];
+  }
+
+  .h3 {
+    @apply text-xl leading-[1.25] font-semibold tracking-[-0.01em] lg:text-[22px];
+  }
+
+  .lead {
+    @apply text-[17px] leading-[1.6] lg:text-lg;
+  }
+
+  /* Playfair runs optically small next to Inter, so it is set 4% larger. */
+  .accent {
+    @apply font-serif font-normal tracking-normal text-lavender-deep;
+    font-size: 1.04em;
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-[15px] leading-none font-semibold whitespace-nowrap select-none;
+    transition:
+      background-color 200ms var(--ease-soft),
+      color 200ms var(--ease-soft),
+      border-color 200ms var(--ease-soft),
+      transform 120ms var(--ease-soft);
+  }
+
+  .btn:active:not([aria-disabled="true"]) {
+    transform: scale(0.98);
+  }
+
+  /* Phosphor SVGs ship without width/height, so every inlined icon needs a size. */
+  .icon {
+    @apply size-6 shrink-0;
+  }
+
+  .btn .icon {
+    @apply size-[18px] shrink-0;
+  }
+
+  .btn-primary {
+    @apply bg-violet text-white hover:bg-violet-ink;
+  }
+
+  .btn-outline {
+    @apply border border-violet text-violet hover:bg-violet hover:text-white;
+  }
+
+  .btn-light {
+    @apply bg-white text-plum hover:bg-mist;
+  }
+
+  .btn-outline-light {
+    @apply border border-white/70 text-white hover:bg-white hover:text-plum;
+  }
+
+  .btn[aria-disabled="true"],
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .icon-btn {
+    @apply inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-line bg-white text-plum;
+    transition:
+      background-color 200ms var(--ease-soft),
+      color 200ms var(--ease-soft),
+      opacity 200ms var(--ease-soft);
+  }
+
+  .icon-btn:hover:not([aria-disabled="true"]) {
+    @apply border-violet bg-violet text-white;
+  }
+
+  .icon-btn[aria-disabled="true"] {
+    @apply cursor-not-allowed opacity-40;
+  }
+
+  .icon-btn .icon {
+    @apply size-5;
+  }
+
+  .icon-disc {
+    @apply inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-lavender text-white;
+  }
+
+  .icon-disc .icon {
+    @apply size-[22px];
+  }
+
+  .chip {
+    @apply inline-flex min-h-9 items-center rounded-full bg-field px-4 text-sm font-medium text-plum;
+  }
+
+  .glass {
+    background-color: rgb(30 23 51 / 0.45);
+    border: 1px solid rgb(255 255 255 / 0.18);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  /* The slide card sits where the scrim is lightest, so it needs a denser fill to keep small text above 4.5:1. */
+  .glass-strong {
+    background-color: rgb(30 23 51 / 0.66);
+  }
+
+  .skip-link {
+    @apply fixed top-3 left-3 z-[100] -translate-y-24 rounded-full bg-plum px-5 py-3 text-sm font-semibold text-white;
+    transition: transform 200ms var(--ease-soft);
+  }
+
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-medium text-plum;
+  }
+
+  .field {
+    @apply block min-h-12 w-full rounded-field border border-transparent bg-field px-4 text-base text-plum;
+    transition:
+      border-color 200ms var(--ease-soft),
+      background-color 200ms var(--ease-soft);
+  }
+
+  .field::placeholder {
+    color: var(--color-placeholder);
+  }
+
+  .field:hover {
+    @apply border-line;
+  }
+
+  .field:focus {
+    @apply border-violet bg-white outline-none;
+    box-shadow: 0 0 0 1px var(--color-violet);
+  }
+
+  .field[aria-invalid="true"] {
+    @apply border-error bg-white;
+  }
+
+  .field:disabled {
+    @apply cursor-not-allowed border-transparent opacity-60;
+  }
+
+  .field::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
+  select.field {
+    @apply cursor-pointer appearance-none pr-11;
+  }
+
+  .field-error {
+    @apply mt-2 flex items-start gap-1.5 text-sm text-error;
+  }
+
+  .field-error .icon {
+    @apply mt-0.5 size-4 shrink-0;
+  }
+}
+
+/* Header: transparent over the hero, solid once the hero has scrolled away. */
+.site-header {
+  transition:
+    background-color 200ms var(--ease-soft),
+    box-shadow 200ms var(--ease-soft),
+    color 200ms var(--ease-soft);
+}
+
+.site-header[data-solid="true"] {
+  background-color: rgb(251 250 252 / 0.97);
+  box-shadow: 0 6px 24px rgb(30 23 51 / 0.08);
+  color: var(--color-plum);
+}
+
+.site-header[data-solid="true"] .nav-pill {
+  background-color: var(--color-field);
+  border-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header[data-solid="true"] .nav-link:hover,
+.site-header[data-solid="true"] .nav-link[aria-current="true"] {
+  background-color: var(--color-white);
+  color: var(--color-plum);
+}
+
+.site-header[data-solid="true"] .header-cta {
+  background-color: var(--color-violet);
+  color: var(--color-white);
+}
+
+.site-header[data-solid="true"] .header-cta:hover {
+  background-color: var(--color-violet-ink);
+}
+
+.site-header[data-solid="true"] .menu-btn {
+  border-color: var(--color-line);
+  color: var(--color-plum);
+}
+
+.site-header[data-solid="true"] :focus-visible {
+  outline-color: var(--color-violet);
+}
+
+.nav-link {
+  transition:
+    background-color 200ms var(--ease-soft),
+    color 200ms var(--ease-soft);
+}
+
+.nav-link:hover,
+.nav-link[aria-current="true"] {
+  background-color: rgb(255 255 255 / 0.16);
+}
+
+/* Hero scrim: darkest where the copy sits, so white text stays above 4.5:1 on the lightest photo. */
+.hero-scrim {
+  background:
+    linear-gradient(180deg, rgb(30 23 51 / 0.5) 0%, rgb(30 23 51 / 0) 28%),
+    linear-gradient(90deg, rgb(30 23 51 / 0.78) 0%, rgb(30 23 51 / 0.7) 50%, rgb(30 23 51 / 0.3) 78%, rgb(30 23 51 / 0.15) 100%);
+}
+
+@media (max-width: 1023px) {
+  .hero-scrim {
+    background:
+      linear-gradient(180deg, rgb(30 23 51 / 0.5) 0%, rgb(30 23 51 / 0) 28%),
+      rgb(30 23 51 / 0.66);
+  }
+}
+
+.hero-slide {
+  opacity: 0;
+  transition: opacity 700ms var(--ease-soft);
+}
+
+.hero-slide[data-active="true"] {
+  opacity: 1;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(255 255 255 / 0.5);
+  transition:
+    width 300ms var(--ease-soft),
+    height 300ms var(--ease-soft),
+    background-color 300ms var(--ease-soft);
+}
+
+[aria-current="true"] > .hero-dot {
+  width: 28px;
+  background-color: var(--color-white);
+}
+
+@media (min-width: 1024px) {
+  [aria-current="true"] > .hero-dot {
+    width: 8px;
+    height: 28px;
+  }
+}
+
+.carousel-track {
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+/* Tracks run edge to edge but their first card lines up with .container-page. */
+.track-bleed {
+  padding-inline: 1.5rem;
+  scroll-padding-inline: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .track-bleed {
+    padding-inline: max(2.5rem, calc((100% - 1280px) / 2 + 2.5rem));
+    scroll-padding-inline: max(2.5rem, calc((100% - 1280px) / 2 + 2.5rem));
+  }
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Panels only collapse once JS is running, so every answer stays readable without it. */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 300ms var(--ease-soft);
+}
+
+.js .accordion-panel[data-open="false"] {
+  grid-template-rows: 0fr;
+}
+
+.accordion-panel > div {
+  overflow: hidden;
+}
+
+.accordion-trigger .icon-minus,
+.accordion-trigger[aria-expanded="true"] .icon-plus {
+  display: none;
+}
+
+.accordion-trigger[aria-expanded="true"] .icon-minus {
+  display: block;
+}
+
+.toggle-option {
+  transition:
+    background-color 200ms var(--ease-soft),
+    color 200ms var(--ease-soft);
+}
+
+.toggle-option[aria-checked="true"] {
+  background-color: var(--color-violet);
+  color: var(--color-white);
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms var(--ease-soft),
+    transform 600ms var(--ease-soft);
+}
+
+.js .reveal[data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Visibility flips at once on open so the close button can take focus; it waits for the fade on close. */
+.drawer {
+  transition:
+    opacity 200ms var(--ease-soft),
+    visibility 0s;
+}
+
+.drawer[data-open="false"] {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 200ms var(--ease-soft),
+    visibility 0s 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background-color: rgb(30 23 51 / 0.85);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
