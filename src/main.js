@@ -8,6 +8,7 @@ import { initBookingForm } from './js/booking-form.js';
 import { initCarousels } from './js/carousel.js';
 import { initHeader } from './js/header.js';
 import { initHeroSlider } from './js/hero-slider.js';
+import { initI18n } from './js/i18n.js';
 import { initPriceToggle } from './js/price-toggle.js';
 import { initReveal } from './js/reveal.js';
 
@@ -25,6 +26,7 @@ function fillPrices() {
 
 fillPrices();
 initHeader();
+initI18n();
 initHeroSlider();
 initCarousels();
 initAccordions();

@@ -46,15 +46,25 @@
 
         <nav aria-label="Main" class="hidden lg:block">
           <ul class="nav-pill glass flex items-center gap-1 rounded-full p-1.5">
-            <li><a href="#treatments" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium">Treatments</a></li>
-            <li><a href="#why-us" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium">Why Us</a></li>
-            <li><a href="#prices" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium">Prices</a></li>
-            <li><a href="#reviews" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium">Reviews</a></li>
-            <li><a href="#booking" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium">Contact</a></li>
+            <li><a href="#treatments" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium" data-i18n="nav.treatments">Treatments</a></li>
+            <li><a href="#why-us" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium" data-i18n="nav.whyUs">Why Us</a></li>
+            <li><a href="#prices" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium" data-i18n="nav.prices">Prices</a></li>
+            <li><a href="#reviews" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium" data-i18n="nav.reviews">Reviews</a></li>
+            <li><a href="#booking" class="nav-link inline-flex min-h-11 items-center rounded-full px-5 text-[15px] font-medium" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
 
-        <a href="#booking" class="btn btn-light header-cta hidden lg:inline-flex">Book Your Session</a>
+        <div class="hidden items-center gap-2.5 lg:flex">
+          <button
+            type="button"
+            class="inline-flex size-11 items-center justify-center rounded-full border border-white/40 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-white hover:text-plum"
+            data-lang-toggle
+            aria-label="Switch language"
+          >
+            ID
+          </button>
+          <a href="#booking" class="btn btn-light header-cta" data-i18n="nav.book">Book Your Session</a>
+        </div>
 
         <button
           type="button"
@@ -88,14 +98,25 @@
       </div>
       <nav aria-label="Mobile" class="container-page mt-4">
         <ul class="divide-y divide-line border-y border-line">
-          <li><a href="#treatments" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link>Treatments</a></li>
-          <li><a href="#why-us" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link>Why Us</a></li>
-          <li><a href="#prices" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link>Prices</a></li>
-          <li><a href="#reviews" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link>Reviews</a></li>
-          <li><a href="#booking" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link>Contact</a></li>
+          <li><a href="#treatments" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link data-i18n="nav.treatments">Treatments</a></li>
+          <li><a href="#why-us" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link data-i18n="nav.whyUs">Why Us</a></li>
+          <li><a href="#prices" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link data-i18n="nav.prices">Prices</a></li>
+          <li><a href="#reviews" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#booking" class="flex min-h-16 items-center text-2xl font-semibold text-plum" data-menu-link data-i18n="nav.contact">Contact</a></li>
         </ul>
-        <a href="#booking" class="btn btn-primary mt-8 w-full" data-menu-link>Book Your Session</a>
-        <p class="mt-6 text-sm">Every day, 08:00 to 23:00 WIB</p>
+        <div class="mt-6 flex items-center justify-between border-t border-line pt-5">
+          <span class="text-sm font-medium text-plum-muted">Bahasa / Language</span>
+          <button
+            type="button"
+            class="inline-flex min-h-10 items-center justify-center rounded-full border border-line px-4 text-xs font-semibold uppercase text-plum transition hover:border-violet"
+            data-lang-toggle
+            aria-label="Switch language"
+          >
+            ID
+          </button>
+        </div>
+        <a href="#booking" class="btn btn-primary mt-6 w-full" data-menu-link data-i18n="nav.book">Book Your Session</a>
+        <p class="mt-4 text-sm" data-i18n="hero.hours">Every day, 08:00 to 23:00 WIB</p>
       </nav>
     </div>
 
@@ -188,16 +209,16 @@
         <div class="container-page flex min-h-[100dvh] items-center pt-28 pb-40 lg:pb-36">
           <div class="max-w-[640px]">
             <h1 class="h1 text-white">
-              Massage, Spa &amp; Reflexology
-              <span class="accent block text-peach">At Your Door.</span>
+              <span data-i18n="hero.h1">Massage, Spa &amp; Reflexology</span>
+              <span class="accent block text-peach" data-i18n="hero.accent">At Your Door.</span>
             </h1>
-            <p class="lead mt-6 max-w-[54ch] text-white/90">
+            <p class="lead mt-6 max-w-[54ch] text-white/90" data-i18n="hero.desc">
               Trained, courteous therapists come to your home in Jakarta, Bogor, Depok, Tangerang, Bekasi, Serang and
               Cilegon. Book on WhatsApp, from Rp&nbsp;100.000 a session.
             </p>
             <div class="mt-9 flex flex-wrap gap-3">
-              <a href="#booking" class="btn btn-light">Book Your Session <i data-ph="arrow-right"></i></a>
-              <a href="#prices" class="btn btn-outline-light">See Prices</a>
+              <a href="#booking" class="btn btn-light" data-i18n="hero.book">Book Your Session <i data-ph="arrow-right"></i></a>
+              <a href="#prices" class="btn btn-outline-light" data-i18n="hero.prices">See Prices</a>
             </div>
             <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 text-[15px]">
               <a href="#reviews" class="group flex min-h-11 items-center gap-3">
@@ -206,10 +227,10 @@
                   <span class="grid size-9 place-items-center rounded-full bg-mist text-sm font-semibold text-plum ring-2 ring-night">S</span>
                   <span class="grid size-9 place-items-center rounded-full bg-white text-sm font-semibold text-plum ring-2 ring-night">M</span>
                 </span>
-                <span class="font-medium underline-offset-4 group-hover:underline">Read client reviews</span>
+                <span class="font-medium underline-offset-4 group-hover:underline" data-i18n="hero.reviews">Read client reviews</span>
               </a>
-              <p class="flex items-center gap-2 text-white/90"><i data-ph="clock" class="size-5"></i>Every day, 08:00 to 23:00 WIB</p>
-              <p class="flex items-center gap-2 text-white/90"><i data-ph="moped-front" class="size-5"></i>No travel fee in selected areas</p>
+              <p class="flex items-center gap-2 text-white/90"><i data-ph="clock" class="size-5"></i><span data-i18n="hero.hours">Every day, 08:00 to 23:00 WIB</span></p>
+              <p class="flex items-center gap-2 text-white/90"><i data-ph="moped-front" class="size-5"></i><span data-i18n="hero.travel">No travel fee in selected areas</span></p>
             </div>
           </div>
         </div>
@@ -259,10 +280,10 @@
         <div class="container-page">
           <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
             <h2 id="treatments-title" class="h2 reveal lg:col-span-6">
-              Treatments Made <span class="accent">For Your Home</span>
+              <span data-i18n="treatments.h2">Treatments Made</span> <span class="accent" data-i18n="treatments.accent">For Your Home</span>
             </h2>
             <div class="reveal lg:col-span-5 lg:col-start-8">
-              <p>
+              <p data-i18n="treatments.desc">
                 Six treatments, each done in your own home by a Lembayung therapist with clean, hygienic equipment.
                 Every combo starts from our full body massage.
               </p>
@@ -340,7 +361,7 @@
                 class="size-28 rounded-full object-cover ring-2 ring-lavender ring-offset-4 ring-offset-card"
               />
               <h3 class="h3 mt-7">Full Body + Face Acupressure</h3>
-              <p class="mt-2 text-[15px]">Full body massage finished with totok wajah, pressure-point work that relaxes the face.</p>
+              <p class="mt-2 text-[15px]">Full body massage paired with traditional totok wajah facial acupressure to release facial tension and refresh the skin.</p>
               <div class="mt-auto pt-6">
                 <p class="text-sm">From</p>
                 <p class="mt-1"><span class="text-2xl font-semibold text-plum tabular-nums" data-price="face-acupressure:from">Rp&nbsp;160.000</span> <span class="text-sm">/ 60 min</span></p>
@@ -362,7 +383,7 @@
                 class="size-28 rounded-full object-cover ring-2 ring-lavender ring-offset-4 ring-offset-card"
               />
               <h3 class="h3 mt-7">Full Body + Reflexology</h3>
-              <p class="mt-2 text-[15px]">Full body massage followed by focused foot reflexology for a deeper reset.</p>
+              <p class="mt-2 text-[15px]">Full body massage followed by focused foot reflexology for total muscular renewal.</p>
               <div class="mt-auto pt-6">
                 <p class="text-sm">From</p>
                 <p class="mt-1"><span class="text-2xl font-semibold text-plum tabular-nums" data-price="body-reflexology:from">Rp&nbsp;160.000</span> <span class="text-sm">/ 60 min</span></p>
@@ -384,7 +405,7 @@
                 class="size-28 rounded-full object-cover ring-2 ring-lavender ring-offset-4 ring-offset-card"
               />
               <h3 class="h3 mt-7">Full Body + Kerokan</h3>
-              <p class="mt-2 text-[15px]">Full body massage with kerokan, the traditional scraping Indonesians use for masuk angin.</p>
+              <p class="mt-2 text-[15px]">Full body massage paired with traditional back kerokan to release chills, bodily fatigue, and stiffness.</p>
               <div class="mt-auto pt-6">
                 <p class="text-sm">From</p>
                 <p class="mt-1"><span class="text-2xl font-semibold text-plum tabular-nums" data-price="kerokan:from">Rp&nbsp;160.000</span> <span class="text-sm">/ 60 min</span></p>
@@ -406,7 +427,7 @@
                 class="size-28 rounded-full object-cover ring-2 ring-lavender ring-offset-4 ring-offset-card"
               />
               <h3 class="h3 mt-7">Full Body + Cupping</h3>
-              <p class="mt-2 text-[15px]">Full body massage with bekam cupping on the back to release tight, knotted muscles.</p>
+              <p class="mt-2 text-[15px]">Full body massage combined with dry cupping (bekam angin) along the back to release deep muscular tension.</p>
               <div class="mt-auto pt-6">
                 <p class="text-sm">From</p>
                 <p class="mt-1"><span class="text-2xl font-semibold text-plum tabular-nums" data-price="cupping:from">Rp&nbsp;245.000</span> <span class="text-sm">/ 60 min</span></p>
@@ -421,16 +442,18 @@
         <div class="container-page">
           <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
             <div class="reveal lg:col-span-5">
-              <h2 id="why-title" class="h2">Professional Massage <span class="accent">Right at Your Place</span></h2>
-              <p class="lead mt-6 max-w-[60ch]">
+              <h2 id="why-title" class="h2">
+                <span data-i18n="why.h2">Professional Massage</span> <span class="accent" data-i18n="why.accent">Right at Your Place</span>
+              </h2>
+              <p class="lead mt-6 max-w-[60ch]" data-i18n="why.p1">
                 Skip the traffic and the waiting room. Lembayung brings professional massage to your home, so you can rest
                 the moment your session ends.
               </p>
-              <p class="mt-4 max-w-[60ch]">
+              <p class="mt-4 max-w-[60ch]" data-i18n="why.p2">
                 Our therapists are trained in traditional Nusantara technique to ease tired muscles and help your body
                 recover. Every visit is friendly, clean and hygienic, with professional ethics.
               </p>
-              <a href="#booking" class="btn btn-primary mt-8">Book Your Session</a>
+              <a href="#booking" class="btn btn-primary mt-8" data-i18n="nav.book">Book Your Session</a>
             </div>
 
             <ul class="reveal divide-y divide-line border-y border-line lg:col-span-6 lg:col-start-7" data-accordion>
@@ -438,60 +461,60 @@
                 <h3>
                   <button type="button" id="why-1-btn" class="accordion-trigger flex min-h-11 w-full items-center gap-4 py-5 text-left" aria-expanded="true" aria-controls="why-1">
                     <span class="icon-disc"><i data-ph="certificate"></i></span>
-                    <span class="flex-1 text-lg font-semibold text-plum">Trained, Courteous Therapists</span>
+                    <span class="flex-1 text-lg font-semibold text-plum" data-i18n="why.item1.title">Trained, Courteous Therapists</span>
                     <span class="grid size-9 place-items-center rounded-full border border-line text-plum"><i data-ph="plus" class="icon-plus size-4"></i><i data-ph="minus" class="icon-minus size-4"></i></span>
                   </button>
                 </h3>
                 <div id="why-1" role="region" aria-labelledby="why-1-btn" class="accordion-panel" data-open="true">
-                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]">Every therapist is trained and certified, and treats each client politely and with care.</p></div>
+                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]" data-i18n="why.item1.desc">Every therapist is trained and certified, and treats each client politely and with care.</p></div>
                 </div>
               </li>
               <li>
                 <h3>
                   <button type="button" id="why-2-btn" class="accordion-trigger flex min-h-11 w-full items-center gap-4 py-5 text-left" aria-expanded="false" aria-controls="why-2">
                     <span class="icon-disc"><i data-ph="house-line"></i></span>
-                    <span class="flex-1 text-lg font-semibold text-plum">Comfort at Home</span>
+                    <span class="flex-1 text-lg font-semibold text-plum" data-i18n="why.item2.title">Rest Right After</span>
                     <span class="grid size-9 place-items-center rounded-full border border-line text-plum"><i data-ph="plus" class="icon-plus size-4"></i><i data-ph="minus" class="icon-minus size-4"></i></span>
                   </button>
                 </h3>
                 <div id="why-2" role="region" aria-labelledby="why-2-btn" class="accordion-panel" data-open="false">
-                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]">No driving and no traffic. Your therapist comes to you, so the calm of the massage stays with you afterwards.</p></div>
+                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]" data-i18n="why.item2.desc">Step straight into your shower or bed. The relaxation continues uninterrupted because you are already in the comfort of your own home.</p></div>
                 </div>
               </li>
               <li>
                 <h3>
                   <button type="button" id="why-3-btn" class="accordion-trigger flex min-h-11 w-full items-center gap-4 py-5 text-left" aria-expanded="false" aria-controls="why-3">
                     <span class="icon-disc"><i data-ph="whatsapp-logo"></i></span>
-                    <span class="flex-1 text-lg font-semibold text-plum">Quick WhatsApp Booking</span>
+                    <span class="flex-1 text-lg font-semibold text-plum" data-i18n="why.item3.title">Quick WhatsApp Booking</span>
                     <span class="grid size-9 place-items-center rounded-full border border-line text-plum"><i data-ph="plus" class="icon-plus size-4"></i><i data-ph="minus" class="icon-minus size-4"></i></span>
                   </button>
                 </h3>
                 <div id="why-3" role="region" aria-labelledby="why-3-btn" class="accordion-panel" data-open="false">
-                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]">Send one message with your treatment, time and address. Our admin replies quickly and confirms your therapist.</p></div>
+                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]" data-i18n="why.item3.desc">Send one message with your treatment, time and address. Our admin replies quickly and confirms your therapist.</p></div>
                 </div>
               </li>
               <li>
                 <h3>
                   <button type="button" id="why-4-btn" class="accordion-trigger flex min-h-11 w-full items-center gap-4 py-5 text-left" aria-expanded="false" aria-controls="why-4">
                     <span class="icon-disc"><i data-ph="moped-front"></i></span>
-                    <span class="flex-1 text-lg font-semibold text-plum">No Travel Fee</span>
+                    <span class="flex-1 text-lg font-semibold text-plum" data-i18n="why.item4.title">Transparent Pricing</span>
                     <span class="grid size-9 place-items-center rounded-full border border-line text-plum"><i data-ph="plus" class="icon-plus size-4"></i><i data-ph="minus" class="icon-minus size-4"></i></span>
                   </button>
                 </h3>
                 <div id="why-4" role="region" aria-labelledby="why-4-btn" class="accordion-panel" data-open="false">
-                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]">There is no travel charge in selected areas. Send your address on WhatsApp and we will confirm before you book.</p></div>
+                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]" data-i18n="why.item4.desc">No surprise surcharges. Travel is fully covered within our primary city zones, and rates are confirmed upfront before dispatch.</p></div>
                 </div>
               </li>
               <li>
                 <h3>
                   <button type="button" id="why-5-btn" class="accordion-trigger flex min-h-11 w-full items-center gap-4 py-5 text-left" aria-expanded="false" aria-controls="why-5">
                     <span class="icon-disc"><i data-ph="shield-check"></i></span>
-                    <span class="flex-1 text-lg font-semibold text-plum">Clear Service Policy</span>
+                    <span class="flex-1 text-lg font-semibold text-plum" data-i18n="why.item5.title">Clear Service Policy</span>
                     <span class="grid size-9 place-items-center rounded-full border border-line text-plum"><i data-ph="plus" class="icon-plus size-4"></i><i data-ph="minus" class="icon-minus size-4"></i></span>
                   </button>
                 </h3>
                 <div id="why-5" role="region" aria-labelledby="why-5-btn" class="accordion-panel" data-open="false">
-                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]">Our therapists provide professional, courteous massage only. Requests outside our standard service are not served.</p></div>
+                  <div><p class="pr-12 pb-6 pl-15 max-w-[62ch]" data-i18n="why.item5.desc">Our therapists provide professional, courteous massage only. Requests outside our standard service are not served.</p></div>
                 </div>
               </li>
             </ul>
@@ -525,8 +548,10 @@
       <section id="area" aria-labelledby="area-title" class="bg-dawn py-24">
         <div class="container-page">
           <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
-            <h2 id="area-title" class="h2 reveal lg:col-span-7">Where and When <span class="accent">We Come to You</span></h2>
-            <p class="reveal lg:col-span-4 lg:col-start-9">
+            <h2 id="area-title" class="h2 reveal lg:col-span-7">
+              <span data-i18n="area.h2">Where and When</span> <span class="accent" data-i18n="area.accent">We Come to You</span>
+            </h2>
+            <p class="reveal lg:col-span-4 lg:col-start-9" data-i18n="area.desc">
               Our therapists travel across Greater Jakarta and Banten, every day of the week.
             </p>
           </div>
@@ -535,8 +560,8 @@
             <article class="reveal grid gap-6 rounded-card bg-card p-6 sm:grid-cols-[1fr_190px] lg:p-8">
               <div class="flex flex-col">
                 <span class="icon-disc"><i data-ph="map-pin"></i></span>
-                <h3 class="h3 mt-5">Service Area</h3>
-                <p class="mt-2">We come to homes in these cities:</p>
+                <h3 class="h3 mt-5" data-i18n="area.areaTitle">Service Area</h3>
+                <p class="mt-2" data-i18n="area.areaDesc">We come to homes in these cities:</p>
                 <ul class="mt-5 flex flex-wrap gap-2" data-city-chips>
                   <li class="chip">Jakarta</li>
                   <li class="chip">Bogor</li>
@@ -546,7 +571,7 @@
                   <li class="chip">Serang</li>
                   <li class="chip">Cilegon</li>
                 </ul>
-                <p class="mt-auto pt-6 text-sm">No travel fee in selected areas. Send us your address to check.</p>
+                <p class="mt-auto pt-6 text-sm" data-i18n="area.areaNote">Complimentary travel within city zones; outer districts confirmed upfront on WhatsApp.</p>
               </div>
               <img
                 src="/img/towels-640.webp"
@@ -561,12 +586,12 @@
             <article class="reveal grid gap-6 rounded-card bg-card p-6 sm:grid-cols-[1fr_190px] lg:p-8">
               <div class="flex flex-col">
                 <span class="icon-disc"><i data-ph="clock"></i></span>
-                <h3 class="h3 mt-5">Opening Hours</h3>
+                <h3 class="h3 mt-5" data-i18n="area.hoursTitle">Opening Hours</h3>
                 <p class="mt-4 text-[32px] leading-none font-semibold tracking-[-0.02em] text-plum tabular-nums lg:text-[40px]">08:00 to 23:00</p>
                 <p class="mt-2">WIB, every day</p>
-                <p class="mt-4">We can head to your place any time within these hours.</p>
-                <a href="https://wa.me/6287771210204?text=Hello%20Lembayung%2C%20I%20would%20like%20to%20ask%20about%20a%20home%20massage." target="_blank" rel="noopener" class="btn btn-primary mt-6 self-start" data-wa-general>
-                  <i data-ph="whatsapp-logo"></i>Chat on WhatsApp
+                <p class="mt-4" data-i18n="area.hoursDesc">We can head to your place any time within these hours.</p>
+                <a href="https://wa.me/6287771210204?text=Hello%20Lembayung%2C%20I%20have%20a%20question%20about%20your%20services%20and%20schedule." target="_blank" rel="noopener" class="btn btn-primary mt-6 self-start" data-wa-general>
+                  <i data-ph="whatsapp-logo"></i><span data-i18n="area.consultBtn">Consult via WhatsApp</span>
                 </a>
               </div>
               <img
@@ -584,8 +609,10 @@
 
       <section id="prices" aria-labelledby="prices-title" class="py-24 text-center lg:py-32">
         <div class="container-page">
-          <h2 id="prices-title" class="h2 reveal mx-auto">Simple Prices, <span class="accent">Per Session</span></h2>
-          <p class="lead reveal mx-auto mt-5 max-w-[52ch]">Choose a session length to compare. Every price is for one session, in Indonesian Rupiah.</p>
+          <h2 id="prices-title" class="h2 reveal mx-auto">
+            <span data-i18n="prices.h2">Simple Prices,</span> <span class="accent" data-i18n="prices.accent">Per Session</span>
+          </h2>
+          <p class="lead reveal mx-auto mt-5 max-w-[52ch]" data-i18n="prices.desc">Choose a session length to compare. Every price is for one session, in Indonesian Rupiah.</p>
 
           <div role="radiogroup" aria-label="Session length" class="mx-auto mt-10 inline-flex rounded-full bg-field p-1.5" data-duration-toggle>
             <button type="button" role="radio" aria-checked="true" tabindex="0" class="toggle-option min-h-11 rounded-full px-6 text-[15px] font-semibold text-plum" data-minutes="60">60 min</button>
@@ -648,7 +675,7 @@
             </article>
           </div>
 
-          <p class="mx-auto mt-8 max-w-[60ch] text-sm">No travel fee in selected areas. Send your address on WhatsApp and we will confirm.</p>
+          <p class="mx-auto mt-8 max-w-[60ch] text-sm" data-i18n="prices.note">All prices include clean linens, oils, and equipment. Travel charges are waived in core city zones.</p>
           <p class="sr-only" aria-live="polite" data-price-status></p>
         </div>
       </section>
@@ -656,7 +683,12 @@
       <section id="reviews" aria-labelledby="reviews-title" class="pb-24 lg:pb-32">
         <div class="container-page">
           <div class="flex flex-wrap items-end justify-between gap-6 border-t border-line pt-24 lg:pt-32">
-            <h2 id="reviews-title" class="h2 reveal">What Our <span class="accent">Clients Say</span></h2>
+            <div>
+              <h2 id="reviews-title" class="h2 reveal">
+                <span data-i18n="reviews.h2">What Our</span> <span class="accent" data-i18n="reviews.accent">Clients Say</span>
+              </h2>
+              <p class="reveal mt-3 max-w-[50ch] text-[15px] text-plum-muted" data-i18n="reviews.desc">Direct feedback from home sessions booked across Greater Jakarta, shared with client permission.</p>
+            </div>
             <div class="flex gap-2">
               <button type="button" class="icon-btn" aria-label="Previous reviews" aria-controls="review-track" data-carousel-prev="review-track">
                 <i data-ph="caret-left"></i>
@@ -709,7 +741,7 @@
                 <i data-ph="star-fill" class="size-5"></i><i data-ph="star-fill" class="size-5"></i><i data-ph="star-fill" class="size-5"></i><i data-ph="star-fill" class="size-5"></i><i data-ph="star-fill" class="size-5"></i>
               </div>
               <blockquote class="mt-5 text-lg leading-[1.55] text-plum">
-                <p>“No more fighting traffic for a massage. I just chatted on WhatsApp and the therapist came right on time. Recommended!”</p>
+                <p>“Booking around a busy schedule was so straightforward on WhatsApp. The therapist was punctual and thorough. Recommended!”</p>
               </blockquote>
               <figcaption class="mt-7 flex items-center gap-3">
                 <span class="grid size-11 place-items-center rounded-full bg-white font-semibold text-plum ring-1 ring-line" aria-hidden="true">M</span>
@@ -732,8 +764,10 @@
       <section id="booking" aria-labelledby="booking-title" class="bg-mist pt-24 pb-24 lg:pt-32">
         <div class="container-page grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div class="reveal lg:col-span-5">
-            <h2 id="booking-title" class="h2">Book Your <span class="accent">Home Session</span></h2>
-            <p class="lead mt-6 max-w-[48ch]">
+            <h2 id="booking-title" class="h2">
+              <span data-i18n="booking.h2">Book Your</span> <span class="accent" data-i18n="booking.accent">Home Session</span>
+            </h2>
+            <p class="lead mt-6 max-w-[48ch]" data-i18n="booking.desc">
               Fill in the form and we will open WhatsApp with your booking ready to send. Our admin confirms the time and
               your therapist.
             </p>
@@ -760,7 +794,7 @@
                 </span>
               </li>
             </ul>
-            <a href="#prices" class="mt-10 inline-flex min-h-11 items-center font-semibold text-violet underline underline-offset-4 hover:text-violet-ink">See prices first</a>
+            <a href="#prices" class="mt-10 inline-flex min-h-11 items-center font-semibold text-violet underline underline-offset-4 hover:text-violet-ink" data-i18n="booking.seePrices">See prices first</a>
           </div>
 
           <div class="reveal lg:col-span-7">
@@ -820,8 +854,8 @@
               <div role="status" data-booking-status></div>
 
               <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <button type="submit" class="btn btn-primary w-full sm:w-auto"><i data-ph="whatsapp-logo"></i>Send via WhatsApp</button>
-                <p id="booking-note" class="text-sm">Opens WhatsApp with your details filled in. This site does not store anything you type.</p>
+                <button type="submit" class="btn btn-primary w-full sm:w-auto"><i data-ph="whatsapp-logo"></i><span data-i18n="booking.submit">Send via WhatsApp</span></button>
+                <p id="booking-note" class="text-sm" data-i18n="booking.note">Opens WhatsApp with your details filled in. This site does not store anything you type.</p>
               </div>
               <noscript>
                 <p class="mt-6 text-[15px] text-plum">

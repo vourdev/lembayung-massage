@@ -161,13 +161,29 @@ export function initBookingForm() {
     field.addEventListener('change', recheck);
   }
 
+  // Ensure focused input is comfortably visible on mobile screens above the virtual keyboard
+  for (const field of Object.values(fields)) {
+    field.addEventListener('focus', () => {
+      if (window.innerWidth < 768) {
+        setTimeout(() => {
+          field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+      }
+    });
+  }
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     status.replaceChildren();
     const order = ['name', 'city', 'treatment', 'duration', 'date', 'time'];
     const invalid = order.filter((key) => !validate(key));
     if (invalid.length) {
-      fields[invalid[0]].focus();
+      const firstInvalid = fields[invalid[0]];
+      const container = firstInvalid.closest('.relative') ?? firstInvalid;
+      container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        firstInvalid.focus({ preventScroll: true });
+      }, 200);
       return;
     }
     const url = whatsappUrl(buildMessage());
